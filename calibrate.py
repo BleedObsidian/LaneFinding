@@ -65,5 +65,4 @@ ret, cameraMatrix, distortionCoefficients, rotationVectors, translationVectors =
 if os.path.exists("calibration.npy"):
   os.remove("calibration.npy")
 with open('calibration.npy', 'wb+') as calibrationFile:
-    np.save(calibrationFile, cameraMatrix)
-    np.save(calibrationFile, distortionCoefficients)
+    np.savez(calibrationFile, cameraMatrix=cameraMatrix, distortionCoefficients=distortionCoefficients)

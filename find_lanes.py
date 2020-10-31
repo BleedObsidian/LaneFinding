@@ -9,7 +9,7 @@ from pipeline import *
 import cv2
 
 # Ask the user for the location of the video file.
-videoFile = "videos/project_video.mp4" #input("Please provide video file path: ")
+videoFile = input("Please provide video file path: ") #"videos/project_video.mp4" 
 videoCapture = cv2.VideoCapture(videoFile)
 videoCapture.set(1, 1)
 newFrame, image = videoCapture.read()
@@ -18,7 +18,7 @@ newFrame, image = videoCapture.read()
 video = cv2.VideoWriter('output.mp4', cv2.VideoWriter_fourcc(*'MP4V'), videoCapture.get(cv2.CAP_PROP_FPS), (image.shape[1], image.shape[0]))
 
 # Ask the user for the calibration file.
-calibrationFile = "calibration.npy" #input("Please provide the calibration file path: ")
+calibrationFile = input("Please provide the calibration file path: ") #"calibration.npy"
 
 # Warn user about the length of the process.
 print("Processing video, this may take a while...")

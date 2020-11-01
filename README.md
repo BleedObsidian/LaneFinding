@@ -2,7 +2,9 @@
 
 Author: Jesse Prescott
 
-Advanced lane finding project submission for the Udacity Self-Driving Car Engineer Nanodegree. 
+Advanced lane finding project submission for the Udacity Self-Driving Car Engineer Nanodegree.
+
+A thorough explanation as to how it works can be found in "writeup.pdf"
 
 ![](images/writeup_images/final_result.jpg)
 

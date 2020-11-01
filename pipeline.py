@@ -58,7 +58,7 @@ def extract_features(image, s_thresh=(170, 255), sx_thresh=(20, 100)):
     s_binary = np.zeros_like(s_channel)
     s_binary[(s_channel >= s_thresh[0]) & (s_channel <= s_thresh[1])] = 1
 
-    # Stack each channel
+    # Stack each binary image together.
     combined_binary = np.zeros_like(sx_binary)
     combined_binary[(sx_binary == 1) | (s_binary == 1)] = 255
 
@@ -85,12 +85,14 @@ def perspective_transform(image):
     #print(roi.x)
     #print(roi.y)
 
+    # Trapazoid as selected by the user.
     tl = [297, 667]
     tr = [1023, 665]
     br = [679, 443]
     bl = [605, 444]
     trapazoid = np.float32([tl, tr, br, bl])
 
+    # Calculation of destination points for trapazoid.
     height, width = image.shape
     x_window_width = 350
     imageVerticies = np.float32([[0+x_window_width, height], [width-x_window_width, height], [width-x_window_width, 0], [0+x_window_width, 0]])
